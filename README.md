@@ -1,10 +1,10 @@
-# 🧩 Asset Management API
+# Asset Management API
 
 A Spring Boot REST API that performs basic CRUD operations on assets and related tables. The API demonstrates proper use of DTOs, service layers, validation, and database migrations using Flyway.
 
 ---
 
-## 🚀 Features
+## Features
 
 - Basic CRUD operations on:
   - `assets`
@@ -33,8 +33,6 @@ A Spring Boot REST API that performs basic CRUD operations on assets and related
 
 
 ## API Endpoints
-
-## 📫 API Endpoints
 
 | Method | Route                 | Description                           |
 |--------|-----------------------|---------------------------------------|
