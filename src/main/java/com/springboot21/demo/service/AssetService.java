@@ -2,8 +2,14 @@ package com.springboot21.demo.service;
 
 
 import com.springboot21.demo.dto.AssetDto;
+import com.springboot21.demo.dto.AssetListDto;
 import com.springboot21.demo.entity.Asset;
+import com.springboot21.demo.entity.AssetStatus;
+import com.springboot21.demo.entity.AssetType;
 import com.springboot21.demo.repository.AssetRepository;
+import com.springboot21.demo.repository.AssetStatusRepository;
+import com.springboot21.demo.repository.AssetTypeRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

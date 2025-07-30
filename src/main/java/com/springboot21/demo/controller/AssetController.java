@@ -1,9 +1,15 @@
 package com.springboot21.demo.controller;
 
 import com.springboot21.demo.dto.AssetDto;
+import com.springboot21.demo.dto.AssetListDto;
 import com.springboot21.demo.dto.MessageResponse;
 import com.springboot21.demo.entity.Asset;
+import com.springboot21.demo.entity.AssetStatus;
+import com.springboot21.demo.entity.AssetType;
 import com.springboot21.demo.repository.AssetRepository;
+import com.springboot21.demo.repository.AssetStatusRepository;
+import com.springboot21.demo.repository.AssetTypeRepository;
+import com.springboot21.demo.service.AssetListService;
 import com.springboot21.demo.service.AssetService;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -19,6 +25,7 @@ import org.springframework.web.server.ResponseStatusException;
 public class AssetController {
     private final AssetRepository assetRepository;
     private AssetService assetService;
+    private AssetListService assetListService;
 
     @GetMapping("")
     public Iterable<AssetDto> getAssetList(){
@@ -32,6 +39,11 @@ public class AssetController {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Asset not found"));
 
         return assetService.convertToDto(asset);
+    }
+
+    @GetMapping("/list-data")
+    public AssetListDto getAssetListData(){
+        return assetListService.getAssetListData();
     }
 
     @PostMapping("/create")
